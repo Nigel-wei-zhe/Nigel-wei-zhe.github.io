@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="zh-tw">
+<title>Vue_Filter過濾器 | Nigel Blog</title>
+<meta charset="utf-8">
+<meta name="generator" content="Hugo 0.58.3" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="canonical" href="https://Nigel-wei-zhe.github.io/posts/vue_filter%E9%81%8E%E6%BF%BE%E5%99%A8/">
+<link rel="alternate" type="application/rss+xml" href="" title="Nigel Blog">
+<link rel="stylesheet" href="https://Nigel-wei-zhe.github.io/css/theme.css">
+<link rel="stylesheet" href="https://Nigel-wei-zhe.github.io/css/classes.css">
+
+<header class="dark">
+  <h2><a href="https://Nigel-wei-zhe.github.io/">Nigel Blog</a></h2>
+  <nav>
+    
+  </nav>
+</header>
+
+<article>
+  <header>
+    <h1><a href="https://Nigel-wei-zhe.github.io/posts/vue_filter%E9%81%8E%E6%BF%BE%E5%99%A8/">Vue_Filter過濾器</a></h1>
+    <p class="meta"><time datetime="2019-10-04T19:50:39&#43;08:00">October 04, 2019</time></p>
+  </header>
+  <p>用於處理一些頁面上資料的呈現</p>
+
+<p>用法:  值後面加上 | (pipe) 可以串入多個Filter，有順序之分(左至右)</p>
+
+<pre><code>{{ value | A | B | C }}
+
+A 執行完 會B 再換 C
+</code></pre>
+
+<p>範例:</p>
+
+<p>替金額加上$，和千分位符號  程式碼如下</p>
+
+<pre><code>&lt;div id=&quot;app&quot;&gt;
+    &lt;div&gt;{{ price | currency }}&lt;/div&gt;
+&lt;/div&gt;
+
+
+new Vue({
+    el: '#app',
+    data: {
+        price: 999999
+    }
+    filter: {
+      currency (number) {
+        const n = Number(number)
+        return `$${n.toFixed(0).replace(/./g, (c, i, a) =&gt; {
+          const currency = (i &amp;&amp; c !== '.' &amp;&amp; ((a.length - i) % 3 === 0) ? `, ${c}`.replace(/\s/g, '') : c);
+          return currency
+        })}`
+      },
+      priceFormat (value) {
+        return `$${value}`
+      }
+    },
+})
+</code></pre>
+
+<p>也可以套用在 V-bind</p>
+
+<pre><code>&lt;div id=&quot;app&quot;&gt;
+    &lt;div :data-value=&quot;value | A | B | C&quot;&gt;&lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+
+<p>使用 Vue.Filter() 全域註冊</p>
+
+<p>Vue.Filter(&lsquo;自訂名稱&rsquo;, 執行的函式)</p>
+
+<p>範例:</p>
+
+<pre><code>&lt;div id=&quot;app&quot;&gt;
+    &lt;div&gt;{{ msg | test('hi') }}&lt;/div&gt;
+&lt;/div&gt;
+
+Vue.Filter('test', function (value, arg) {
+  return `${value}~${arg}`
+})
+new Vue({
+  el: '#app',
+  data: {
+    msg: 'Nigel'
+  }
+})
+
+顯示: Nigel~hi
+</code></pre>
+
+</article>
+
+
+
+</html>
