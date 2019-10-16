@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="zh-tw">
+<title>Express建置 | Nigel Blog</title>
+<meta charset="utf-8">
+<meta name="generator" content="Hugo 0.58.3" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="canonical" href="https://Nigel-wei-zhe.github.io/posts/express%E5%BB%BA%E7%BD%AE/">
+<link rel="alternate" type="application/rss+xml" href="" title="Nigel Blog">
+<link rel="stylesheet" href="https://Nigel-wei-zhe.github.io/css/theme.css">
+<link rel="stylesheet" href="https://Nigel-wei-zhe.github.io/css/classes.css">
+
+<header class="dark">
+  <h2><a href="https://Nigel-wei-zhe.github.io/">Nigel Blog</a></h2>
+  <nav>
+    
+  </nav>
+</header>
+
+<article>
+  <header>
+    <h1><a href="https://Nigel-wei-zhe.github.io/posts/express%E5%BB%BA%E7%BD%AE/">Express建置</a></h1>
+    <p class="meta"><time datetime="2019-10-16T14:12:25&#43;08:00">October 16, 2019</time></p>
+  </header>
+  
+
+<h2 id="介紹">#介紹</h2>
+
+<p>express是建立在node.js的http模組上，另外包裝，並提供
+一些中介。</p>
+
+<p>不免俗 Hello world 範例:</p>
+
+<pre><code>const express = require('express')
+const app = express()
+
+app.get(`/`, function (req, res) {
+  res.send(`Hello World!`)
+})
+
+app.listen(3000, function () {
+  console.log(`Example app listening on port 3000!`)
+})
+</code></pre>
+
+<p>或者 可以直接用產生器</p>
+
+<p>全域安裝</p>
+
+<pre><code>npm install express-generator -g
+</code></pre>
+
+<p>裝完透過</p>
+
+<pre><code>express -h
+</code></pre>
+
+<p>可以看到</p>
+
+<pre><code>Usage: express [options][dir]
+Options:
+-h, --help          output usage information
+    --version       output the version number
+-e, --ejs           add ejs engine support
+    --hbs           add handlebars engine support
+    --pug           add pug engine support
+-H, --hogan         add hogan.js engine support
+    --no-view       generate without view engine
+-v, --view &lt;engine&gt; add view &lt;engine&gt; support (ejs|hbs|hjs|jade|pug|twig|vash) (defaults to jade)
+-c, --css &lt;engine&gt;  add stylesheet &lt;engine&gt; support (less|stylus|compass|sass) (defaults to plain css)
+    --git           add .gitignore
+-f, --force         force on non-empty directory
+</code></pre>
+
+<p>到要開專案的路徑底下(這邊選用 ejs 模板)</p>
+
+<pre><code>express --view=ejs myapp
+</code></pre>
+
+<p>資料結構:</p>
+
+<pre><code>.
+├── app.js
+├── bin
+│   └── www
+├── package.json
+├── public
+│   ├── images
+│   ├── javascripts
+│   └── stylesheets
+│       └── style.css
+├── routes
+│   ├── index.js
+│   └── users.js
+└── views
+├── error.pug
+├── index.pug
+└── layout.pug
+
+7 directories, 9 files
+</code></pre>
+
+</article>
+
+
+
+</html>
