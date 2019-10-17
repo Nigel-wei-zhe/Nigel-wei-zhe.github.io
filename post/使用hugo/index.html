@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="zh-tw">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="author" content="wei-zhe">
+  <meta name="description" content="Describe your website">
+  <meta name="generator" content="Hugo 0.58.3" />
+
+  <title>使用Hugo &middot; Nigel Blog</title>
+
+  <link rel="shortcut icon" href="https://Nigel-wei-zhe.github.io/images/favicon.ico">
+  <link rel="stylesheet" href="https://Nigel-wei-zhe.github.io/css/spectre.min.css">
+  <link rel="stylesheet" href="https://Nigel-wei-zhe.github.io/css/style.css">
+  <link rel="stylesheet" href="https://Nigel-wei-zhe.github.io/css/highlight.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.min.css">
+  
+    <link rel="stylesheet" href="https://cdn.rawgit.com/konpa/devicon/df6431e323547add1b4cf45992913f15286456d3/devicon.min.css">
+  
+
+  
+    <link href="" rel="alternate" type="application/rss+xml" title="Nigel Blog" />
+  
+
+  
+  <meta property="og:title" content="使用Hugo" />
+<meta property="og:description" content="Hugo" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://Nigel-wei-zhe.github.io/post/%E4%BD%BF%E7%94%A8hugo/" />
+<meta property="article:published_time" content="2019-10-03T20:09:38+08:00" />
+<meta property="article:modified_time" content="2019-10-03T20:09:38+08:00" />
+
+  
+  <meta itemprop="name" content="使用Hugo">
+<meta itemprop="description" content="Hugo">
+
+
+<meta itemprop="datePublished" content="2019-10-03T20:09:38&#43;08:00" />
+<meta itemprop="dateModified" content="2019-10-03T20:09:38&#43;08:00" />
+<meta itemprop="wordCount" content="69">
+
+
+
+<meta itemprop="keywords" content="html5,css3," />
+
+  <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="使用Hugo"/>
+<meta name="twitter:description" content="Hugo"/>
+
+</head>
+
+<body onload="setPixelFont()">
+  <div class="container p-fixed" style="z-index:3">
+  <nav class="navbar m-2 p-2 s-rounded shadow bg-primary">
+    <section class="navbar-section">
+      <button class="btn btn-action btn-primary s-circle text-gray" id="pixelfont-toggle"><i class="fas fa-robot fa-lg"></i></button>
+    </section>
+    <section class="navbar-section">
+      
+        <a class="btn btn-primary" href='https://Nigel-wei-zhe.github.io/'>Home</a>
+      
+
+      
+        <a class="btn btn-primary mx-2" href="/about/">About</a>
+      
+
+      
+      <a class="btn btn-accent" href="" target="_blank"><i class="fas fa-rss fa-lg"></i></a>
+      
+    </section>
+  </nav>
+</div>
+
+  <section class="container grid-md">
+  <div class="columns">
+    
+    
+<article class="container p-centered mt-space">
+  <header>
+    <h2 class="text-center">使用Hugo</h2>
+    <h6 class="text-gray text-italic">Hugo</h6>
+  </header>
+  <section class="my-gap">
+    
+
+<p><strong>建置環境:Windows-64bit</strong></p>
+
+<hr />
+
+<h2 id="安裝hugo">安裝Hugo</h2>
+
+<p>前往:
+    <a href="https://github.com/gohugoio/hugo/releases">https://github.com/gohugoio/hugo/releases</a></p>
+
+<p>下載對應的版本</p>
+
+<p>在 C:\ 底下建立 一個新資料夾 命名 Hugo
+裡面再建立一個子資料夾 命名 bin</p>
+
+<p>把剛剛下載的檔案 全部解壓縮 放入 C:\Hugo\bin</p>
+
+<p>使用 CMD 下指令 確認版本號</p>
+
+<pre><code>C:\Hugo\bin&gt;hugo version
+</code></pre>
+
+<p>再去 控制台 -&gt; 編輯系統環境變數</p>
+
+<p>環境變數 -&gt; 使用者變數的 Path 把剛剛的</p>
+
+<pre><code>C:\Hugo\bin
+</code></pre>
+
+<p>新增進去</p>
+
+<p>使用 CMD 去確認 有新增成功</p>
+
+<pre><code>C:\&gt;hugo version    
+</code></pre>
+
+<p>有跳出版本訊息 才算成功</p>
+
+<hr />
+
+<h2 id="新增一個新的-site">新增一個新的 Site</h2>
+
+<p>指令</p>
+
+<pre><code>hugo new site [Site名稱]
+</code></pre>
+
+<p>線上選取一個主題:
+    <a href="https://themes.gohugo.io/">https://themes.gohugo.io/</a></p>
+
+<p>選取主題後，底下作者都有教怎麼安裝
+請參考</p>
+
+<p>新增第一篇文章試試看</p>
+
+<p>指令</p>
+
+<pre><code>hugo new posts/my-first-post.md
+</code></pre>
+
+<p>會在     \content\posts  找到我們新增的第一篇文章</p>
+
+<p>這時候下指令</p>
+
+<pre><code>hugo server -D
+</code></pre>
+
+<p>就會在 <a href="http://localhost:1313/">http://localhost:1313/</a> 看到成果</p>
+
+
+    
+      <code class="text-bold">Tags</code> 
+      
+        <a class="chip text-accent" href="https://Nigel-wei-zhe.github.io/tags/html5">html5</a>
+      
+        <a class="chip text-accent" href="https://Nigel-wei-zhe.github.io/tags/css3">css3</a>
+      
+    
+  </section>
+  <div class="divider my-gap"></div>
+  <footer class="col-12 d-inline-block">
+    <span class="float-left">
+      <button class="btn btn-action btn-accent shadow s-circle" onclick="window.history.back();"><i class="fas fa-arrow-left"></i></button>
+    </span>
+    <span class="float-right">
+      <div class="text-right float-left mx-2">
+        <span class="text-dark">wei-zhe</span><br>
+        <span class="text-gray">I&#39;m a Programmer.</span>
+      </div>
+      <figure class="avatar avatar-lg">
+        <img id="profile">
+      </figure>
+    </span>
+  </footer>
+</article>
+
+    <footer class="container p-centered text-center my-gap">
+  
+    <div class="container">
+
+  
+    <a class="symbol" href="mailto:nigalboa@gmail.com" target="_blank"><i class="fas fa-envelope"></i>
+  
+  </a>
+
+  
+    <a class="symbol" href="https://www.facebook.com/" target="_blank"><i class="fab fa-facebook"></i>
+  
+  </a>
+
+  
+    <a class="symbol" href="https://github.com/Nigel-wei-zhe" target="_blank"><i class="fab fa-github"></i>
+  
+  </a>
+
+</div>
+
+  
+
+  <small class="text-gray">
+  
+    © Copyright 2019 wei-zhe
+  
+  </small>
+</footer>
+
+  </div>
+  </section>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://Nigel-wei-zhe.github.io/js/main.js"></script>
+<script src="https://Nigel-wei-zhe.github.io/js/highlight.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+
+
+
+
+</body>
+</html>

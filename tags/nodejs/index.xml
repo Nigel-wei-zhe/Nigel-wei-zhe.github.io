@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>nodejs on Nigel Blog</title>
+    <link>https://Nigel-wei-zhe.github.io/tags/nodejs/</link>
+    <description>Recent content in nodejs on Nigel Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-tw</language>
+    <lastBuildDate>Wed, 16 Oct 2019 14:12:25 +0800</lastBuildDate>
+    
+	<atom:link href="https://Nigel-wei-zhe.github.io/tags/nodejs/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Build Express</title>
+      <link>https://Nigel-wei-zhe.github.io/post/express%E5%BB%BA%E7%BD%AE/</link>
+      <pubDate>Wed, 16 Oct 2019 14:12:25 +0800</pubDate>
+      
+      <guid>https://Nigel-wei-zhe.github.io/post/express%E5%BB%BA%E7%BD%AE/</guid>
+      <description>#介紹 express是建立在node.js的http模組上，另外包裝，並提供 一些中介。
+不免俗 Hello world 範例:
+const express = require(&#39;express&#39;) const app = express() app.get(`/`, function (req, res) { res.send(`Hello World!`) }) app.listen(3000, function () { console.log(`Example app listening on port 3000!`) })  或者 可以直接用產生器
+全域安裝
+npm install express-generator -g  裝完透過
+express -h  可以看到
+Usage: express [options][dir] Options: -h, --help output usage information --version output the version number -e, --ejs add ejs engine support --hbs add handlebars engine support --pug add pug engine support -H, --hogan add hogan.</description>
+    </item>
+    
+  </channel>
+</rss>

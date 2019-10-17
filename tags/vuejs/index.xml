@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>vuejs on Nigel Blog</title>
+    <link>https://Nigel-wei-zhe.github.io/tags/vuejs/</link>
+    <description>Recent content in vuejs on Nigel Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-tw</language>
+    <lastBuildDate>Mon, 14 Oct 2019 16:28:40 +0800</lastBuildDate>
+    
+	<atom:link href="https://Nigel-wei-zhe.github.io/tags/vuejs/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>V-if 注意資料載入的時間點</title>
+      <link>https://Nigel-wei-zhe.github.io/post/v-if-%E6%B3%A8%E6%84%8F%E8%B3%87%E6%96%99%E8%BC%89%E5%85%A5%E7%9A%84%E6%99%82%E9%96%93%E9%BB%9E/</link>
+      <pubDate>Mon, 14 Oct 2019 16:28:40 +0800</pubDate>
+      
+      <guid>https://Nigel-wei-zhe.github.io/post/v-if-%E6%B3%A8%E6%84%8F%E8%B3%87%E6%96%99%E8%BC%89%E5%85%A5%E7%9A%84%E6%99%82%E9%96%93%E9%BB%9E/</guid>
+      <description>#狀況 Html:
+&amp;lt;div id=&amp;quot;app&amp;quot;&amp;gt; &amp;lt;h1 v-if=&amp;quot;testData.array.length &amp;gt; 0&amp;quot;&amp;gt; 如果陣列有值顯示出來 &amp;lt;/h1&amp;gt; &amp;lt;/div&amp;gt;  Js:
+new Vue ({ el: &#39;#app&#39;, data: { testData: &#39;&#39; }, created () { const vm = this vm.testData = { testArray: [ { msg: &#39;hi&#39; } ] } } })  這時候去看console 會報錯
+TypeError: Cannot read property &#39;length&#39; of undefined  就我的理解應該是一開始掛載 data 時，屬性建立時還沒有把 testArray 掛上去，當然也無法使用length
+#解決辦法 &amp;lt;div id=&amp;quot;app&amp;quot;&amp;gt; &amp;lt;h1 v-if=&amp;quot;testData.testArray &amp;amp;&amp;amp; testData.testArray.length &amp;gt; 0&amp;quot;&amp;gt; 如果陣列有值顯示出來 &amp;lt;/h1&amp;gt; &amp;lt;/div&amp;gt;  一開始就先檢查一次值是否存在，再執行後續動作</description>
+    </item>
+    
+    <item>
+      <title>Vue_Filter過濾器</title>
+      <link>https://Nigel-wei-zhe.github.io/post/vue_filter%E9%81%8E%E6%BF%BE%E5%99%A8/</link>
+      <pubDate>Fri, 04 Oct 2019 19:50:39 +0800</pubDate>
+      
+      <guid>https://Nigel-wei-zhe.github.io/post/vue_filter%E9%81%8E%E6%BF%BE%E5%99%A8/</guid>
+      <description>用於處理一些頁面上資料的呈現
+用法: 值後面加上 | (pipe) 可以串入多個Filter，有順序之分(左至右)
+{{ value | A | B | C }} A 執行完 會B 再換 C  範例:
+替金額加上$，和千分位符號 程式碼如下
+&amp;lt;div id=&amp;quot;app&amp;quot;&amp;gt; &amp;lt;div&amp;gt;{{ price | currency }}&amp;lt;/div&amp;gt; &amp;lt;/div&amp;gt; new Vue({ el: &#39;#app&#39;, data: { price: 999999 } filter: { currency (number) { const n = Number(number) return `$${n.toFixed(0).replace(/./g, (c, i, a) =&amp;gt; { const currency = (i &amp;amp;&amp;amp; c !== &#39;.&#39; &amp;amp;&amp;amp; ((a.length - i) % 3 === 0) ?</description>
+    </item>
+    
+  </channel>
+</rss>
