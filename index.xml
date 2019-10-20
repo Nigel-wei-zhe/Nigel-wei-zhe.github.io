@@ -6,10 +6,22 @@
     <description>Recent content on Nigel Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-tw</language>
-    <lastBuildDate>Wed, 16 Oct 2019 14:12:25 +0800</lastBuildDate>
+    <lastBuildDate>Sun, 20 Oct 2019 17:02:14 +0800</lastBuildDate>
     
 	<atom:link href="https://Nigel-wei-zhe.github.io/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>JavaScript Abbreviation</title>
+      <link>https://Nigel-wei-zhe.github.io/post/javascript-abbreviation/</link>
+      <pubDate>Sun, 20 Oct 2019 17:02:14 +0800</pubDate>
+      
+      <guid>https://Nigel-wei-zhe.github.io/post/javascript-abbreviation/</guid>
+      <description>三元運算子  當要寫 if else 判斷式時 一般會寫成
+const a = 7 let result if (a &amp;gt; 0) { result = `a大於0` } else { result = `a小於0` }  簡寫
+let result = a &amp;gt; 0 ? `a大於0` : `a小於0`   短路求值  當宣告一個變數給值時，想確認不是 null, undefined, 空值時 可能會這樣寫
+if (a !== null || a !== undefined || a !== &#39;&#39;) { let b = a }  簡寫</description>
+    </item>
     
     <item>
       <title>Build Express</title>
