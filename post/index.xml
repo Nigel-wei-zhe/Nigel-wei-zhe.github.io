@@ -12,7 +12,7 @@
     
     
     <item>
-      <title>VeeValidate v3.0.11</title>
+      <title>Vee-Validate v3.0.11</title>
       <link>https://Nigel-wei-zhe.github.io/post/veevalidate/</link>
       <pubDate>Tue, 29 Oct 2019 16:11:36 +0800</pubDate>
       
@@ -20,7 +20,7 @@
       <description>介紹  利用Vue.js基礎模板來驗證表單的模組，內建一些驗證規則，也可自行新增
  設置 安裝:
  npm
- # install with npm npm install vee-validate   CDN
+ npm install vee-validate --save   CDN
  &amp;lt;!-- jsdelivr cdn --&amp;gt; &amp;lt;script src=&amp;quot;https://cdn.jsdelivr.net/npm/vee-validate@latest/dist/vee-validate.js&amp;quot;&amp;gt;&amp;lt;/script&amp;gt; &amp;lt;!-- unpkg --&amp;gt; &amp;lt;script src=&amp;quot;https://unpkg.com/vee-validate@latest&amp;quot;&amp;gt;&amp;lt;/script&amp;gt;  套用:
  所有規則套用中文訊息
  import { ValidationProvider, ValidationObserver, extend } from &#39;vee-validate&#39; import * as rules from &#39;vee-validate/dist/rules&#39; import tw from &#39;vee-validate/dist/locale/zh_TW&#39; for (let rule in rules) { extend(rule, { ...rules[rule], // add the rule message: tw.messages[rule] // 把 message 加進去並中文化 }) } extend(&#39;telRegExp&#39;, { validate: value =&amp;gt; { const reg = /^09\d{8}$/ return reg.</description>
@@ -33,9 +33,11 @@
       
       <guid>https://Nigel-wei-zhe.github.io/post/localstorage/</guid>
       <description>介紹 Web Storage 為 HTML5 標準中新加入的技術 主要分兩種一個是
-sessionStorage &amp;gt; 放在sessionStorage的資料會在頁面(頁籤)關閉時清空，只要該頁面頁面(頁籤)沒被關閉或者有還原(restore)該頁面，資料就會保存。
-localStorage &amp;gt; 放在localStorage的資料會永久保存，直到被使用者清除。
-早期瀏覽器要儲存暫存的資料會使用 cookie，而不管你使用哪個暫存你網頁的資料都要注意該筆資料是否敏感數據，因為只要打開控制台，你就隨意修改它們的值，而有心人士就可以利用此方式來做 XSS 攻擊
+sessionStorage
+ 放在sessionStorage的資料會在頁面(頁籤)關閉時清空，只要該頁面頁面(頁籤)沒被關閉或者有還原(restore)該頁面，資料就會保存。
+ localStorage
+ 放在localStorage的資料會永久保存，直到被使用者清除。
+ 早期瀏覽器要儲存暫存的資料會使用 cookie，而不管你使用哪個暫存你網頁的資料都要注意該筆資料是否敏感數據，因為只要打開控制台，你就隨意修改它們的值，而有心人士就可以利用此方式來做 XSS 攻擊
 支援 web storage method 更新 Storage
 Storage.setItem(&#39;key&#39;, &#39;value&#39;)  or
 Storage.&#39;key&#39; = &#39;value&#39;  指定物件屬性的 key 以及 value ， 我們可以在 storage 物件中加入屬性或修改原本的屬性內容
