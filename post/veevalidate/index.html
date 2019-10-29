@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="zh-tw">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="author" content="wei-zhe">
+  <meta name="description" content="Describe your website">
+  <meta name="generator" content="Hugo 0.58.3" />
+
+  <title>VeeValidate v3.0.11 &middot; Nigel Blog</title>
+
+  <link rel="shortcut icon" href="https://Nigel-wei-zhe.github.io/images/favicon.ico">
+  <link rel="stylesheet" href="https://Nigel-wei-zhe.github.io/css/spectre.min.css">
+  <link rel="stylesheet" href="https://Nigel-wei-zhe.github.io/css/style.css">
+  <link rel="stylesheet" href="https://Nigel-wei-zhe.github.io/css/highlight.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.min.css">
+  
+    <link rel="stylesheet" href="https://cdn.rawgit.com/konpa/devicon/df6431e323547add1b4cf45992913f15286456d3/devicon.min.css">
+  
+
+  
+    <link href="" rel="alternate" type="application/rss+xml" title="Nigel Blog" />
+  
+
+  
+  <meta property="og:title" content="VeeValidate v3.0.11" />
+<meta property="og:description" content="VeeValidate is a template-based validation library for Vue.js" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://Nigel-wei-zhe.github.io/post/veevalidate/" />
+<meta property="article:published_time" content="2019-10-29T16:11:36+08:00" />
+<meta property="article:modified_time" content="2019-10-29T16:11:36+08:00" />
+
+  
+  <meta itemprop="name" content="VeeValidate v3.0.11">
+<meta itemprop="description" content="VeeValidate is a template-based validation library for Vue.js">
+
+
+<meta itemprop="datePublished" content="2019-10-29T16:11:36&#43;08:00" />
+<meta itemprop="dateModified" content="2019-10-29T16:11:36&#43;08:00" />
+<meta itemprop="wordCount" content="295">
+
+
+
+<meta itemprop="keywords" content="NodeJs,vuejs," />
+
+  <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="VeeValidate v3.0.11"/>
+<meta name="twitter:description" content="VeeValidate is a template-based validation library for Vue.js"/>
+
+</head>
+
+<body onload="setPixelFont()">
+  <div class="container p-fixed" style="z-index:3">
+  <nav class="navbar m-2 p-2 s-rounded shadow bg-primary">
+    <section class="navbar-section">
+      <button class="btn btn-action btn-primary s-circle text-gray" id="pixelfont-toggle"><i class="fas fa-robot fa-lg"></i></button>
+    </section>
+    <section class="navbar-section">
+      
+        <a class="btn btn-primary" href='https://Nigel-wei-zhe.github.io/'>Home</a>
+      
+
+      
+        <a class="btn btn-primary mx-2" href="/about/">About</a>
+      
+
+      
+      <a class="btn btn-accent" href="" target="_blank"><i class="fas fa-rss fa-lg"></i></a>
+      
+    </section>
+  </nav>
+</div>
+
+  <section class="container grid-md">
+  <div class="columns">
+    
+    
+<article class="container p-centered mt-space">
+  <header>
+    <h2 class="text-center">VeeValidate v3.0.11</h2>
+    <h6 class="text-gray text-italic">VeeValidate is a template-based validation library for Vue.js</h6>
+  </header>
+  <section class="my-gap">
+    
+
+<h1 id="介紹">介紹</h1>
+
+<hr />
+
+<blockquote>
+<p>利用Vue.js基礎模板來驗證表單的模組，內建一些驗證規則，也可自行新增</p>
+</blockquote>
+
+<h1 id="設置">設置</h1>
+
+<hr />
+
+<p><strong>安裝</strong>:</p>
+
+<blockquote>
+<p>npm</p>
+</blockquote>
+
+<pre><code># install with npm
+npm install vee-validate
+</code></pre>
+
+<blockquote>
+<p>CDN</p>
+</blockquote>
+
+<pre><code>&lt;!-- jsdelivr cdn --&gt;
+&lt;script src=&quot;https://cdn.jsdelivr.net/npm/vee-validate@latest/dist/vee-validate.js&quot;&gt;&lt;/script&gt;
+&lt;!-- unpkg --&gt;
+&lt;script src=&quot;https://unpkg.com/vee-validate@latest&quot;&gt;&lt;/script&gt;
+</code></pre>
+
+<p><strong>套用</strong>:</p>
+
+<blockquote>
+<p>所有規則套用中文訊息</p>
+</blockquote>
+
+<pre><code>import { ValidationProvider, ValidationObserver, extend } from 'vee-validate'
+import * as rules from 'vee-validate/dist/rules'
+import tw from 'vee-validate/dist/locale/zh_TW'
+
+for (let rule in rules) {
+  extend(rule, {
+    ...rules[rule], // add the rule
+    message: tw.messages[rule] // 把 message 加進去並中文化
+  })
+}
+
+extend('telRegExp', {
+  validate: value =&gt; {
+  const reg = /^09\d{8}$/
+  return reg.test(value)
+  },
+  message: '手機號碼 格式錯誤'
+}) // 自訂手機號碼規則
+
+Vue.component('ValidationProvider', ValidationProvider)
+Vue.component('ValidationObserver', ValidationObserver)
+</code></pre>
+
+<blockquote>
+<p>使用 ValidationProvider 包裝 inputs</p>
+</blockquote>
+
+<pre><code>&lt;validation-provider rules=&quot;required&quot; v-slot=&quot;{ errors }&quot;&gt;
+    &lt;input v-model=&quot;value&quot; name=&quot;myinput&quot; type=&quot;text&quot; /&gt;
+    &lt;span&gt;{{ errors[0] }}&lt;/span&gt;
+&lt;/validation-provider&gt;
+</code></pre>
+
+<h2 id="使用驗證">#使用驗證</h2>
+
+<p><strong>內建規則</strong></p>
+
+<pre><code>&quot;alpha&quot;: &quot;{_field_} 須以英文組成&quot;,
+&quot;alpha_dash&quot;: &quot;{_field_} 須以英數、斜線及底線組成&quot;,
+&quot;alpha_num&quot;: &quot;{_field_} 須以英數組成&quot;,
+&quot;alpha_spaces&quot;: &quot;{_field_} 須以英文及空格組成&quot;,
+&quot;between&quot;: &quot;{_field_} 須介於 {min} 至 {max}之間&quot;,
+&quot;confirmed&quot;: &quot; {_field_} 不一致&quot;,
+&quot;digits&quot;: &quot;{_field_} 須為 {length} 位數字&quot;,
+&quot;dimensions&quot;: &quot;{_field_} 圖片尺寸不正確。須為 {width} x {height} 像素&quot;,
+&quot;email&quot;: &quot;{_field_} 須為有效的電子信箱&quot;,
+&quot;excluded&quot;: &quot;{_field_} 的選項無效&quot;,
+&quot;ext&quot;: &quot;{_field_} 須為有效的檔案&quot;,
+&quot;image&quot;: &quot;{_field_} 須為圖片&quot;,
+&quot;oneOf&quot;: &quot;{_field_} 的選項無效&quot;,
+&quot;integer&quot;: &quot;{_field_} 須為整數&quot;,
+&quot;length&quot;: &quot;{_field_} 的長度須為 {length}&quot;,
+&quot;max&quot;: &quot;{_field_} 不能大於 {length} 個字元&quot;,
+&quot;max_value&quot;: &quot;{_field_} 不得大於 {max}&quot;,
+&quot;mimes&quot;: &quot;{_field_} 須為有效的檔案類型&quot;,
+&quot;min&quot;: &quot;{_field_} 不能小於 {length} 個字元&quot;,
+&quot;min_value&quot;: &quot;{_field_} 不得小於 {min}&quot;,
+&quot;numeric&quot;: &quot;{_field_} 須為數字&quot;,
+&quot;regex&quot;: &quot;{_field_} 的格式錯誤&quot;,
+&quot;required&quot;: &quot;{_field_} 為必填&quot;,
+&quot;required_if&quot;: &quot;{_field_} 為必填&quot;,
+&quot;size&quot;: &quot;{_field_} 的檔案須小於 {size}KB&quot;
+</code></pre>
+
+<p><strong>用法</strong></p>
+
+<blockquote>
+<p>在 ValidationProvider 中添加 rules 屬性後面添加驗證規則，v-slot會把結果傳出來 <a href="https://logaretm.github.io/vee-validate/guide/validation-provider.html#scoped-slot-data">關於 Scoped Slot Data</a></p>
+</blockquote>
+
+<pre><code>&lt;ValidationProvider rules=&quot;required|email&quot; v-slot=&quot;{ errors }&quot;&gt;&lt;/ValidationProvider&gt;
+</code></pre>
+
+<blockquote>
+<p>有些規則直接套用屬姓名就好，有些是後面需要帶參數的</p>
+</blockquote>
+
+<pre><code>&lt;ValidationProvider rules=&quot;required|min:3&quot; v-slot=&quot;{ errors }&quot;&gt;&lt;/ValidationProvider&gt;
+&lt;ValidationProvider rules=&quot;required|between:3,10&quot; v-slot=&quot;{ errors }&quot;&gt;&lt;/ValidationProvider&gt;
+&lt;ValidationProvider rules=&quot;required|oneOf:coffee,tea,beer,milk&quot; v-slot=&quot;{ errors }&quot;&gt;&lt;/ValidationProvider&gt;
+</code></pre>
+
+<h1 id="validationprovider-與-validationobserver">ValidationProvider 與 ValidationObserver</h1>
+
+<hr />
+
+<p><strong>ValidationProvider</strong>:
+&gt;比較針對 每一個單一 input 去做驗證</p>
+
+<p><strong>ValidationObserver</strong>:
+&gt;對整張表單，檢查每一項input 是否都通過驗證</p>
+
+<p>範例:</p>
+
+<pre><code>&lt;template&gt;
+  &lt;ValidationObserver ref=&quot;observer&quot; v-slot=&quot;{ invalid }&quot; tag=&quot;form&quot; @submit.prevent=&quot;submit()&quot;&gt;
+    &lt;TextFieldWithValidation rules=&quot;required&quot; v-model=&quot;first&quot; /&gt;
+
+    &lt;TextFieldWithValidation rules=&quot;required&quot; v-model=&quot;second&quot; /&gt;
+
+    &lt;button :disabled=&quot;invalid&quot;&gt;Submit&lt;/button&gt;
+  &lt;/ValidationObserver&gt;
+&lt;/template&gt;
+
+&lt;script&gt;
+export default {
+  methods: {
+    async submit() {
+      const isValid = await this.$refs.observer.validate();
+      if (!isValid) {
+        // ABORT!!
+      }
+
+      // 🐿 ship it
+    }
+  }
+};
+&lt;/script&gt;
+</code></pre>
+
+<h2 id="參考連結">#參考連結</h2>
+
+<p><a href="https://logaretm.github.io/vee-validate/guide/">VeeValidate官網</a>
+<a href="https://www.kabanoki.net/4955/">カバの樹</a></p>
+
+
+    
+      <code class="text-bold">Tags</code> 
+      
+        <a class="chip text-accent" href="https://Nigel-wei-zhe.github.io/tags/nodejs">NodeJs</a>
+      
+        <a class="chip text-accent" href="https://Nigel-wei-zhe.github.io/tags/vuejs">vuejs</a>
+      
+    
+  </section>
+  <div class="divider my-gap"></div>
+  <footer class="col-12 d-inline-block">
+    <span class="float-left">
+      <button class="btn btn-action btn-accent shadow s-circle" onclick="window.history.back();"><i class="fas fa-arrow-left"></i></button>
+    </span>
+    <span class="float-right">
+      <div class="text-right float-left mx-2">
+        <span class="text-dark">wei-zhe</span><br>
+        <span class="text-gray">I&#39;m a Programmer.</span>
+      </div>
+      <figure class="avatar avatar-lg">
+        <img id="profile">
+      </figure>
+    </span>
+  </footer>
+</article>
+
+    <footer class="container p-centered text-center my-gap">
+  
+    <div class="container">
+
+  
+    <a class="symbol" href="mailto:nigalboa@gmail.com" target="_blank"><i class="fas fa-envelope"></i>
+  
+  </a>
+
+  
+    <a class="symbol" href="https://www.facebook.com/" target="_blank"><i class="fab fa-facebook"></i>
+  
+  </a>
+
+  
+    <a class="symbol" href="https://github.com/Nigel-wei-zhe" target="_blank"><i class="fab fa-github"></i>
+  
+  </a>
+
+</div>
+
+  
+
+  <small class="text-gray">
+  
+    © Copyright 2019 wei-zhe
+  
+  </small>
+</footer>
+
+  </div>
+  </section>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://Nigel-wei-zhe.github.io/js/main.js"></script>
+<script src="https://Nigel-wei-zhe.github.io/js/highlight.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+
+
+
+
+</body>
+</html>
