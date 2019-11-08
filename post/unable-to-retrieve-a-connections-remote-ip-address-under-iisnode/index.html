@@ -95,7 +95,9 @@
 另外 IISNode 與 Node.exe 之間的連接是走命名的方式，不是走 TCP，所以在
 Node.exe 無法取到 IP address</p>
 
-<h2 id="解決">#解決</h2>
+<h1 id="解決">解決</h1>
+
+<hr />
 
 <p>在 IISNode 的 web.config 上添加</p>
 
@@ -116,10 +118,9 @@ Node.exe 無法取到 IP address</p>
 <pre><code>const http = require('http')
   http.createServer(function (req, res) {
   const xff = req.headers['x-forwarded-for']
-　// ...
+  // ...
+}).listen(process.env.PORT)
 </code></pre>
-
-<p>　　}).listen(process.env.PORT)</p>
 
 <h1 id="參考連結">參考連結</h1>
 

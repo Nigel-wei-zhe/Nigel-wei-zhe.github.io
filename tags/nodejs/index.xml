@@ -18,7 +18,7 @@
       
       <guid>https://Nigel-wei-zhe.github.io/post/unable-to-retrieve-a-connections-remote-ip-address-under-iisnode/</guid>
       <description>狀況 在 IIS 底下安裝 IISNode 模組，並在後端架設一個 Node.exe 要在 Node.exe 上獲取遠端連接的IP位址會失敗。 因為 IISNode 像是一個 reverse proxy 多個源頭進來，但 Node.exe 只會看到一個位址 就是 IISNode 所有的 client 連進來都看不到。 另外 IISNode 與 Node.exe 之間的連接是走命名的方式，不是走 TCP，所以在 Node.exe 無法取到 IP address
-#解決 在 IISNode 的 web.config 上添加
+解決 在 IISNode 的 web.config 上添加
 &amp;lt;configuration&amp;gt; &amp;lt;system.webServer&amp;gt; &amp;lt;!-- ... --&amp;gt; &amp;lt;iisnode enableXFF=&amp;quot;true&amp;quot; /&amp;gt; &amp;lt;/system.webServer&amp;gt; &amp;lt;/configuration&amp;gt;  這樣 client 連進來 IISNode 要拋給 Node.exe 就會添加 一個 X-Forwarded-For request header 把外部進來 IP　再傳遞下去
 const http = require(&#39;http&#39;) http.createServer(function (req, res) { const xff = req.</description>
     </item>
