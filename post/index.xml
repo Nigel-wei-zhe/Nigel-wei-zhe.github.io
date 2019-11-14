@@ -62,6 +62,17 @@ Storage.clear()  把storage 中的所有屬性移除</description>
     </item>
     
     <item>
+      <title>multer</title>
+      <link>https://Nigel-wei-zhe.github.io/post/multer/</link>
+      <pubDate>Thu, 24 Oct 2019 16:08:57 +0800</pubDate>
+      
+      <guid>https://Nigel-wei-zhe.github.io/post/multer/</guid>
+      <description>介紹  Multer 是一個 node.js 的中間件，&amp;rdquo;只&amp;rdquo;用於處理 multipart/form-data 類型的數據，主要用於上傳
+ 安裝:
+npm install --save multer  參數 req.file 的屬性    Key Description Note     fieldname 表單上面的名稱    originalname 電腦上顯示的檔案名稱    encoding 編碼    mimetype 文件的mime 類型    size 文件大小 (位元組)    destination 路徑 DiskStorage   filename 保存在 destination 的名稱 DiskStorage   path 完整路徑 DiskStorage   buffer 存放檔案的內存 MemoryStorage    multer(opts) 的 opts    Key Description     dest or storage 存放位置   fileFilter 過濾 (函式)   limits 限制數據   preservePath 保存完整文件路徑     storage</description>
+    </item>
+    
+    <item>
       <title>Unix timestamp</title>
       <link>https://Nigel-wei-zhe.github.io/post/unix-timestamp/</link>
       <pubDate>Wed, 23 Oct 2019 15:16:39 +0800</pubDate>

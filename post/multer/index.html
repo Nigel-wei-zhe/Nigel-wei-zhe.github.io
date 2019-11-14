@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="zh-tw">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="author" content="wei-zhe">
+  <meta name="description" content="Describe your website">
+  <meta name="generator" content="Hugo 0.58.3" />
+
+  <title>multer &middot; Nigel Blog</title>
+
+  <link rel="shortcut icon" href="https://Nigel-wei-zhe.github.io/images/favicon.ico">
+  <link rel="stylesheet" href="https://Nigel-wei-zhe.github.io/css/spectre.min.css">
+  <link rel="stylesheet" href="https://Nigel-wei-zhe.github.io/css/style.css">
+  <link rel="stylesheet" href="https://Nigel-wei-zhe.github.io/css/highlight.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.min.css">
+  
+    <link rel="stylesheet" href="https://cdn.rawgit.com/konpa/devicon/df6431e323547add1b4cf45992913f15286456d3/devicon.min.css">
+  
+
+  
+    <link href="" rel="alternate" type="application/rss+xml" title="Nigel Blog" />
+  
+
+  
+  <meta property="og:title" content="multer" />
+<meta property="og:description" content="Multer is a node.js middleware for handling multipart/form-data" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://Nigel-wei-zhe.github.io/post/multer/" />
+<meta property="article:published_time" content="2019-10-24T16:08:57+08:00" />
+<meta property="article:modified_time" content="2019-10-24T16:08:57+08:00" />
+
+  
+  <meta itemprop="name" content="multer">
+<meta itemprop="description" content="Multer is a node.js middleware for handling multipart/form-data">
+
+
+<meta itemprop="datePublished" content="2019-10-24T16:08:57&#43;08:00" />
+<meta itemprop="dateModified" content="2019-10-24T16:08:57&#43;08:00" />
+<meta itemprop="wordCount" content="370">
+
+
+
+<meta itemprop="keywords" content="javascript,NodeJs,vuejs," />
+
+  <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="multer"/>
+<meta name="twitter:description" content="Multer is a node.js middleware for handling multipart/form-data"/>
+
+</head>
+
+<body onload="setPixelFont()">
+  <div class="container p-fixed" style="z-index:3">
+  <nav class="navbar m-2 p-2 s-rounded shadow bg-primary">
+    <section class="navbar-section">
+      <button class="btn btn-action btn-primary s-circle text-gray" id="pixelfont-toggle"><i class="fas fa-robot fa-lg"></i></button>
+    </section>
+    <section class="navbar-section">
+      
+        <a class="btn btn-primary" href='https://Nigel-wei-zhe.github.io/'>Home</a>
+      
+
+      
+        <a class="btn btn-primary mx-2" href="/about/">About</a>
+      
+
+      
+      <a class="btn btn-accent" href="" target="_blank"><i class="fas fa-rss fa-lg"></i></a>
+      
+    </section>
+  </nav>
+</div>
+
+  <section class="container grid-md">
+  <div class="columns">
+    
+    
+<article class="container p-centered mt-space">
+  <header>
+    <h2 class="text-center">multer</h2>
+    <h6 class="text-gray text-italic">Multer is a node.js middleware for handling multipart/form-data</h6>
+  </header>
+  <section class="my-gap">
+    
+
+<h1 id="介紹">介紹</h1>
+
+<hr />
+
+<blockquote>
+<p>Multer 是一個 node.js 的中間件，&rdquo;只&rdquo;用於處理 multipart/form-data 類型的數據，主要用於上傳</p>
+</blockquote>
+
+<p>安裝:</p>
+
+<pre><code>npm install --save multer
+</code></pre>
+
+<h1 id="參數">參數</h1>
+
+<hr />
+
+<h2 id="req-file-的屬性">req.file 的屬性</h2>
+
+<table>
+<thead>
+<tr>
+<th align="center">Key</th>
+<th align="center">Description</th>
+<th align="center">Note</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="center">fieldname</td>
+<td align="center">表單上面的名稱</td>
+<td align="center"></td>
+</tr>
+
+<tr>
+<td align="center">originalname</td>
+<td align="center">電腦上顯示的檔案名稱</td>
+<td align="center"></td>
+</tr>
+
+<tr>
+<td align="center">encoding</td>
+<td align="center">編碼</td>
+<td align="center"></td>
+</tr>
+
+<tr>
+<td align="center">mimetype</td>
+<td align="center">文件的mime 類型</td>
+<td align="center"></td>
+</tr>
+
+<tr>
+<td align="center">size</td>
+<td align="center">文件大小 (位元組)</td>
+<td align="center"></td>
+</tr>
+
+<tr>
+<td align="center">destination</td>
+<td align="center">路徑</td>
+<td align="center">DiskStorage</td>
+</tr>
+
+<tr>
+<td align="center">filename</td>
+<td align="center">保存在 destination 的名稱</td>
+<td align="center">DiskStorage</td>
+</tr>
+
+<tr>
+<td align="center">path</td>
+<td align="center">完整路徑</td>
+<td align="center">DiskStorage</td>
+</tr>
+
+<tr>
+<td align="center">buffer</td>
+<td align="center">存放檔案的內存</td>
+<td align="center">MemoryStorage</td>
+</tr>
+</tbody>
+</table>
+
+<h2 id="multer-opts-的-opts">multer(opts) 的  opts</h2>
+
+<table>
+<thead>
+<tr>
+<th align="center">Key</th>
+<th align="center">Description</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="center">dest or storage</td>
+<td align="center">存放位置</td>
+</tr>
+
+<tr>
+<td align="center">fileFilter</td>
+<td align="center">過濾 (函式)</td>
+</tr>
+
+<tr>
+<td align="center">limits</td>
+<td align="center">限制數據</td>
+</tr>
+
+<tr>
+<td align="center">preservePath</td>
+<td align="center">保存完整文件路徑</td>
+</tr>
+</tbody>
+</table>
+
+<blockquote>
+<p>storage</p>
+</blockquote>
+
+<pre><code>const upload = multer({ dest: 'uploads/' })
+// 存放在 uploads 資料夾裡
+
+or
+
+const storage = multer.diskStorage({
+  destination: function (req, file, cb) {
+    cb(null, 'uploads/')
+  },   // 存放在 uploads 資料夾裡
+  filename: function (req, file, cb) {
+    cb(null, file.originalname)
+  }    // 設定檔案的名稱，沒有設定的話是隨機並且沒有副檔名
+})
+
+const upload = multer({ storage: storage })
+</code></pre>
+
+<p>存於內存:</p>
+
+<pre><code>const storage = multer.memoryStorage()
+const upload = multer({ storage: storage })
+</code></pre>
+
+<blockquote>
+<p>limits</p>
+</blockquote>
+
+<p>fieldNameSize – 欄位名最大尺寸。預設值：100 bytes</p>
+
+<p>fieldSize – 欄位值最大尺寸。預設值：1MB</p>
+
+<p>fields – 非檔案欄位的最大數量。預設值：Infinity</p>
+
+<p>fileSize – multipart 表單中，檔案的最大尺寸。預設值：Infinity</p>
+
+<p>files – multipart 表單中，檔案最大數量。預設值：Infinity</p>
+
+<p>parts – multipart 表單中，最大元件(fields files)數量。預設值：Infinity</p>
+
+<p>headerPairs – 預設值：2000</p>
+
+<p>範例:</p>
+
+<pre><code>const upload = multer({
+  limit: {
+    fileSize: 1000000 // 限制上傳檔案的大小為 1MB = 1000000 bytes
+  }
+})
+</code></pre>
+
+<blockquote>
+<p>fileFilter</p>
+</blockquote>
+
+<p>過濾函示，直接上範例</p>
+
+<pre><code>const onlyImage = function (req, file, cb) {
+  const reg = /^image\/*/   // 正規驗證 image 類型的檔案
+  if (reg.test(file.mimetype)) {
+
+    // 若接受該檔案，呼叫 cb() 並帶入 true
+    cb(null, true)
+
+  } else {
+
+    // 自訂一個屬性 fileValidationError 加到 req 中
+    req.fileValidationError = `上傳檔案格式錯誤` 
+
+
+    // 若不接受該檔案，呼叫 cb() 並帶入 false, 錯誤訊息可帶可不帶
+    cb(null, false, new Error('上傳檔案格式錯誤'))
+  }
+}
+
+const upload = multer({ fileFilter: onlyImage })
+</code></pre>
+
+<h2 id="multer-opts-後面接的方法">multer(opts) 後面接的方法</h2>
+
+<blockquote>
+<p>.single(fieldname)</p>
+</blockquote>
+
+<p>接受 &ldquo;一個&rdquo; 名稱為 &ldquo;fieldname&rdquo; 的資料。 資料存在 req.file</p>
+
+<blockquote>
+<p>.array(fieldname[, maxCount])</p>
+</blockquote>
+
+<p>接受 &ldquo;數個&rdquo; 名稱為 &ldquo;fieldname&rdquo; 的資料，maxCount 限制最大數量。 資料存在 req.files</p>
+
+<blockquote>
+<p>.fields(fields)</p>
+</blockquote>
+
+<p>接受 &ldquo;數組&rdquo; 名稱不同 的資料。 資料存在 req.files</p>
+
+<pre><code>[
+  { name: 'avatar', maxCount: 1 },
+  { name: 'gallery', maxCount: 8 }
+]
+</code></pre>
+
+<blockquote>
+<p>.any()</p>
+</blockquote>
+
+<p>接受一切上傳的資料。資料存在 req.files</p>
+
+<blockquote>
+<p>.none()</p>
+</blockquote>
+
+<p>只接受文本域</p>
+
+<h1 id="範例">範例</h1>
+
+<hr />
+
+<p>html:</p>
+
+<pre><code>&lt;form action=&quot;/profile&quot; method=&quot;post&quot; enctype=&quot;multipart/form-data&quot;&gt;
+  &lt;input type=&quot;file&quot; name=&quot;avatar&quot;&gt;
+&lt;/form&gt;
+
+    or
+
+&lt;input type=&quot;file&quot; ref=&quot;files&quot;&gt;
+
+...
+
+ const uploadFile = this.$refs.files.files[0]
+ const formData = new FormData()
+ formData.append('avatar', uploadFile)
+</code></pre>
+
+<p>server:</p>
+
+<pre><code>const express = require('express')
+const multer  = require('multer')
+const upload = multer({ dest: 'uploads/' })
+
+const app = express()
+
+app.post('/profile', upload.single('avatar'), function (req, res, next) {
+  // req.file is the `avatar` file
+  // req.body will hold the text fields, if there were any
+})
+
+app.post('/photos/upload', upload.array('photos', 12), function (req, res, next) {
+  // req.files is array of `photos` files
+  // req.body will contain the text fields, if there were any
+})
+</code></pre>
+
+<h1 id="參考連結">參考連結</h1>
+
+<hr />
+
+<p><a href="https://github.com/expressjs/multer">Multer</a></p>
+
+
+    
+      <code class="text-bold">Tags</code> 
+      
+        <a class="chip text-accent" href="https://Nigel-wei-zhe.github.io/tags/javascript">javascript</a>
+      
+        <a class="chip text-accent" href="https://Nigel-wei-zhe.github.io/tags/nodejs">NodeJs</a>
+      
+        <a class="chip text-accent" href="https://Nigel-wei-zhe.github.io/tags/vuejs">vuejs</a>
+      
+    
+  </section>
+  <div class="divider my-gap"></div>
+  <footer class="col-12 d-inline-block">
+    <span class="float-left">
+      <button class="btn btn-action btn-accent shadow s-circle" onclick="window.history.back();"><i class="fas fa-arrow-left"></i></button>
+    </span>
+    <span class="float-right">
+      <div class="text-right float-left mx-2">
+        <span class="text-dark">wei-zhe</span><br>
+        <span class="text-gray">I&#39;m a Programmer.</span>
+      </div>
+      <figure class="avatar avatar-lg">
+        <img id="profile">
+      </figure>
+    </span>
+  </footer>
+</article>
+
+    <footer class="container p-centered text-center my-gap">
+  
+    <div class="container">
+
+  
+    <a class="symbol" href="mailto:nigalboa@gmail.com" target="_blank"><i class="fas fa-envelope"></i>
+  
+  </a>
+
+  
+    <a class="symbol" href="https://www.facebook.com/" target="_blank"><i class="fab fa-facebook"></i>
+  
+  </a>
+
+  
+    <a class="symbol" href="https://github.com/Nigel-wei-zhe" target="_blank"><i class="fab fa-github"></i>
+  
+  </a>
+
+</div>
+
+  
+
+  <small class="text-gray">
+  
+    © Copyright 2019 wei-zhe
+  
+  </small>
+</footer>
+
+  </div>
+  </section>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://Nigel-wei-zhe.github.io/js/main.js"></script>
+<script src="https://Nigel-wei-zhe.github.io/js/highlight.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+
+
+
+
+</body>
+</html>
