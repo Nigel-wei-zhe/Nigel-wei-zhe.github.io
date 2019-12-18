@@ -6,10 +6,21 @@
     <description>Recent content in vuejs on Nigel Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-tw</language>
-    <lastBuildDate>Tue, 29 Oct 2019 16:11:36 +0800</lastBuildDate>
+    <lastBuildDate>Sun, 24 Nov 2019 16:08:57 +0800</lastBuildDate>
     
 	<atom:link href="https://Nigel-wei-zhe.github.io/tags/vuejs/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>multer</title>
+      <link>https://Nigel-wei-zhe.github.io/post/multer/</link>
+      <pubDate>Sun, 24 Nov 2019 16:08:57 +0800</pubDate>
+      
+      <guid>https://Nigel-wei-zhe.github.io/post/multer/</guid>
+      <description>介紹  Multer 是一個 node.js 的中間件，&amp;rdquo;只&amp;rdquo;用於處理 multipart/form-data 類型的數據，主要用於上傳
+ 安裝:
+npm install --save multer  參數 req.file 的屬性    Key Description Note     fieldname 表單上面的名稱    originalname 電腦上顯示的檔案名稱    encoding 編碼    mimetype 文件的mime 類型    size 文件大小 (位元組)    destination 路徑 DiskStorage   filename 保存在 destination 的名稱 DiskStorage   path 完整路徑 DiskStorage   buffer 存放檔案的內存 MemoryStorage    multer(opts) 的 opts    Key Description     dest or storage 存放位置   fileFilter 過濾 (函式)   limits 限制數據   preservePath 保存完整文件路徑     storage</description>
+    </item>
     
     <item>
       <title>Vee-Validate v3.0.11</title>
@@ -24,17 +35,6 @@
  &amp;lt;!-- jsdelivr cdn --&amp;gt; &amp;lt;script src=&amp;quot;https://cdn.jsdelivr.net/npm/vee-validate@latest/dist/vee-validate.js&amp;quot;&amp;gt;&amp;lt;/script&amp;gt; &amp;lt;!-- unpkg --&amp;gt; &amp;lt;script src=&amp;quot;https://unpkg.com/vee-validate@latest&amp;quot;&amp;gt;&amp;lt;/script&amp;gt;  套用:
  所有規則套用中文訊息
  import { ValidationProvider, ValidationObserver, extend } from &#39;vee-validate&#39; import * as rules from &#39;vee-validate/dist/rules&#39; import tw from &#39;vee-validate/dist/locale/zh_TW&#39; for (let rule in rules) { extend(rule, { ...rules[rule], // add the rule message: tw.messages[rule] // 把 message 加進去並中文化 }) } extend(&#39;telRegExp&#39;, { validate: value =&amp;gt; { const reg = /^09\d{8}$/ return reg.</description>
-    </item>
-    
-    <item>
-      <title>multer</title>
-      <link>https://Nigel-wei-zhe.github.io/post/multer/</link>
-      <pubDate>Thu, 24 Oct 2019 16:08:57 +0800</pubDate>
-      
-      <guid>https://Nigel-wei-zhe.github.io/post/multer/</guid>
-      <description>介紹  Multer 是一個 node.js 的中間件，&amp;rdquo;只&amp;rdquo;用於處理 multipart/form-data 類型的數據，主要用於上傳
- 安裝:
-npm install --save multer  參數 req.file 的屬性    Key Description Note     fieldname 表單上面的名稱    originalname 電腦上顯示的檔案名稱    encoding 編碼    mimetype 文件的mime 類型    size 文件大小 (位元組)    destination 路徑 DiskStorage   filename 保存在 destination 的名稱 DiskStorage   path 完整路徑 DiskStorage   buffer 存放檔案的內存 MemoryStorage    multer(opts) 的 opts    Key Description     dest or storage 存放位置   fileFilter 過濾 (函式)   limits 限制數據   preservePath 保存完整文件路徑     storage</description>
     </item>
     
     <item>

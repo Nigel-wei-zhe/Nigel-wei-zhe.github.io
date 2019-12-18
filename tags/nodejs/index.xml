@@ -6,10 +6,47 @@
     <description>Recent content in NodeJs on Nigel Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-tw</language>
-    <lastBuildDate>Fri, 08 Nov 2019 10:09:08 +0800</lastBuildDate>
+    <lastBuildDate>Wed, 18 Dec 2019 09:44:32 +0800</lastBuildDate>
     
 	<atom:link href="https://Nigel-wei-zhe.github.io/tags/nodejs/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Shallow Copy &amp; Deep Copy</title>
+      <link>https://Nigel-wei-zhe.github.io/post/shallow-copy-_-deep-copy/</link>
+      <pubDate>Wed, 18 Dec 2019 09:44:32 +0800</pubDate>
+      
+      <guid>https://Nigel-wei-zhe.github.io/post/shallow-copy-_-deep-copy/</guid>
+      <description>Data Type (型別) 首先在JS中,可分為 Primitive Type (基本型別) 跟 Non-Primitive Type (非基本型別)
+ Primitive: Number、 String、 Boolean、 Null、 Undefined Non-Primitive: Object、 Array、 Function、 Date、 Regx  兩者差異在於，給值方式的不同
+那麼可以分為 By value (值) 跟 By reference (參考位置)
+ Primitive Type 是 By value
+用 Number 舉例:
+var a = 1 var b = a b = 2 console.log(a); // Output: 1 console.log(b); // Output: 2 // 修改 b 時不會修改到 a  Non-Primitive Type 是 By reference</description>
+    </item>
+    
+    <item>
+      <title>Session</title>
+      <link>https://Nigel-wei-zhe.github.io/post/session/</link>
+      <pubDate>Fri, 06 Dec 2019 15:23:37 +0800</pubDate>
+      
+      <guid>https://Nigel-wei-zhe.github.io/post/session/</guid>
+      <description>Session 介紹 HTTP協議上本身是&amp;rdquo;無狀態&amp;rdquo;的,就是單純的傳送、接收，無法紀錄使用者的一些資訊， 所以 cookie 及 session 的這種機制就被發明出來了,那透一個情景來理解 Session 今天一位客人進入一間餐廳，服務生會發給他一張會員卡，上面會有一組會員ID 並在餐廳內部電腦記錄了，這個 ID 是哪位顧客持有的，並把基本資料 (姓名、電話) 跟這個 ID 綁定在一起 當下次這位顧客來到餐廳，出示他的會員卡，服務生就能透過會員的ID去查客人的基本資料 那麼 這裡面的 會員ID 就是 Session ID 藉由這個機制，就可以擴充HTTP協議本身是無狀態，讓一些新的應用產生
+express-session NPM:
+npm install express-session  Example:
+var express = require(&#39;express&#39;) var session = require(&#39;express-session&#39;) app.use(session({ name: &#39;connect.sid&#39; // 設置在cookie中,保存session的名稱,預設為&#39;connect.sid&#39; store: ,// 默認存在內存中，可以改成 redis, mongodb 等 secret: &#39;keyboard cat&#39;, // 加密字串 resave: false, //每次請求要不要再重新發送 session saveUninitialized: true // 再沒有不論有沒有 session 每次請求都會發送 session cookie cookie: { maxAge: 10 * 1000 } // 設定有效時間 })) app.</description>
+    </item>
+    
+    <item>
+      <title>multer</title>
+      <link>https://Nigel-wei-zhe.github.io/post/multer/</link>
+      <pubDate>Sun, 24 Nov 2019 16:08:57 +0800</pubDate>
+      
+      <guid>https://Nigel-wei-zhe.github.io/post/multer/</guid>
+      <description>介紹  Multer 是一個 node.js 的中間件，&amp;rdquo;只&amp;rdquo;用於處理 multipart/form-data 類型的數據，主要用於上傳
+ 安裝:
+npm install --save multer  參數 req.file 的屬性    Key Description Note     fieldname 表單上面的名稱    originalname 電腦上顯示的檔案名稱    encoding 編碼    mimetype 文件的mime 類型    size 文件大小 (位元組)    destination 路徑 DiskStorage   filename 保存在 destination 的名稱 DiskStorage   path 完整路徑 DiskStorage   buffer 存放檔案的內存 MemoryStorage    multer(opts) 的 opts    Key Description     dest or storage 存放位置   fileFilter 過濾 (函式)   limits 限制數據   preservePath 保存完整文件路徑     storage</description>
+    </item>
     
     <item>
       <title>Unable to retrieve a connection&#39;s remote IP address under IISNode</title>
@@ -36,17 +73,6 @@ const http = require(&#39;http&#39;) http.createServer(function (req, res) { con
  &amp;lt;!-- jsdelivr cdn --&amp;gt; &amp;lt;script src=&amp;quot;https://cdn.jsdelivr.net/npm/vee-validate@latest/dist/vee-validate.js&amp;quot;&amp;gt;&amp;lt;/script&amp;gt; &amp;lt;!-- unpkg --&amp;gt; &amp;lt;script src=&amp;quot;https://unpkg.com/vee-validate@latest&amp;quot;&amp;gt;&amp;lt;/script&amp;gt;  套用:
  所有規則套用中文訊息
  import { ValidationProvider, ValidationObserver, extend } from &#39;vee-validate&#39; import * as rules from &#39;vee-validate/dist/rules&#39; import tw from &#39;vee-validate/dist/locale/zh_TW&#39; for (let rule in rules) { extend(rule, { ...rules[rule], // add the rule message: tw.messages[rule] // 把 message 加進去並中文化 }) } extend(&#39;telRegExp&#39;, { validate: value =&amp;gt; { const reg = /^09\d{8}$/ return reg.</description>
-    </item>
-    
-    <item>
-      <title>multer</title>
-      <link>https://Nigel-wei-zhe.github.io/post/multer/</link>
-      <pubDate>Thu, 24 Oct 2019 16:08:57 +0800</pubDate>
-      
-      <guid>https://Nigel-wei-zhe.github.io/post/multer/</guid>
-      <description>介紹  Multer 是一個 node.js 的中間件，&amp;rdquo;只&amp;rdquo;用於處理 multipart/form-data 類型的數據，主要用於上傳
- 安裝:
-npm install --save multer  參數 req.file 的屬性    Key Description Note     fieldname 表單上面的名稱    originalname 電腦上顯示的檔案名稱    encoding 編碼    mimetype 文件的mime 類型    size 文件大小 (位元組)    destination 路徑 DiskStorage   filename 保存在 destination 的名稱 DiskStorage   path 完整路徑 DiskStorage   buffer 存放檔案的內存 MemoryStorage    multer(opts) 的 opts    Key Description     dest or storage 存放位置   fileFilter 過濾 (函式)   limits 限制數據   preservePath 保存完整文件路徑     storage</description>
     </item>
     
     <item>
