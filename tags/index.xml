@@ -6,10 +6,19 @@
     <description>Recent content in Tags on Nigel Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-tw</language>
-    <lastBuildDate>Mon, 30 Dec 2019 11:28:08 +0800</lastBuildDate>
+    <lastBuildDate>Mon, 30 Dec 2019 21:41:49 +0800</lastBuildDate>
     
 	<atom:link href="https://Nigel-wei-zhe.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>google</title>
+      <link>https://Nigel-wei-zhe.github.io/tags/google/</link>
+      <pubDate>Mon, 30 Dec 2019 21:41:49 +0800</pubDate>
+      
+      <guid>https://Nigel-wei-zhe.github.io/tags/google/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>css3</title>

@@ -8,7 +8,7 @@
   <meta name="description" content="Describe your website">
   <meta name="generator" content="Hugo 0.58.3" />
 
-  <title>Regular Expression &middot; Nigel Blog</title>
+  <title>Google Analytics &middot; Nigel Blog</title>
 
   <link rel="shortcut icon" href="https://Nigel-wei-zhe.github.io/images/favicon.ico">
   <link rel="stylesheet" href="https://Nigel-wei-zhe.github.io/css/spectre.min.css">
@@ -37,29 +37,29 @@ if (!doNotTrack) {
 }
 </script>
 
-  <meta property="og:title" content="Regular Expression" />
-<meta property="og:description" content="RegExp" />
+  <meta property="og:title" content="Google Analytics" />
+<meta property="og:description" content="hugo Internal Templates - Google Analytics " />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://Nigel-wei-zhe.github.io/post/regular-expression/" />
-<meta property="article:published_time" content="2019-10-08T15:22:42+08:00" />
-<meta property="article:modified_time" content="2019-10-08T15:22:42+08:00" />
+<meta property="og:url" content="https://Nigel-wei-zhe.github.io/post/google-analytics/" />
+<meta property="article:published_time" content="2019-12-30T21:41:49+08:00" />
+<meta property="article:modified_time" content="2019-12-30T21:41:49+08:00" />
 
   
-  <meta itemprop="name" content="Regular Expression">
-<meta itemprop="description" content="RegExp">
+  <meta itemprop="name" content="Google Analytics">
+<meta itemprop="description" content="hugo Internal Templates - Google Analytics ">
 
 
-<meta itemprop="datePublished" content="2019-10-08T15:22:42&#43;08:00" />
-<meta itemprop="dateModified" content="2019-10-08T15:22:42&#43;08:00" />
-<meta itemprop="wordCount" content="94">
+<meta itemprop="datePublished" content="2019-12-30T21:41:49&#43;08:00" />
+<meta itemprop="dateModified" content="2019-12-30T21:41:49&#43;08:00" />
+<meta itemprop="wordCount" content="67">
 
 
 
-<meta itemprop="keywords" content="javascript," />
+<meta itemprop="keywords" content="google," />
 
   <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Regular Expression"/>
-<meta name="twitter:description" content="RegExp"/>
+<meta name="twitter:title" content="Google Analytics"/>
+<meta name="twitter:description" content="hugo Internal Templates - Google Analytics "/>
 
 </head>
 
@@ -91,144 +91,54 @@ if (!doNotTrack) {
     
 <article class="container p-centered mt-space">
   <header>
-    <h2 class="text-center">Regular Expression</h2>
-    <h6 class="text-gray text-italic">RegExp</h6>
+    <h2 class="text-center">Google Analytics</h2>
+    <h6 class="text-gray text-italic">hugo Internal Templates - Google Analytics</h6>
   </header>
   <section class="my-gap">
     
 
-<h1 id="介紹">介紹</h1>
+<p>開發網站絕對不是為了自己開心，通常都有目的性，不論是分享資訊、廣告、賣東西
+那麼就會有個問題出來了，究竟有多少人看過我的網站呢? 流量如何? 都是從哪裡連過來
+所以就會套用網路分析工具，在自己的網頁中埋code，方便統計這些數據，從而優化自己網站，增加流量</p>
 
-<hr />
+<h1 id="google-analytics">Google Analytics</h1>
 
-<p>Regular Expression (RegExp) 正規表達式
-用來判斷字串是否有符合格式
-線上測試Reg格式的網址:<a href="https://regexr.com/">https://regexr.com/</a></p>
+<p>那麼用自己的 blog 為例，目前引擎採用 hugo v0.58
+根據官方的文件，是有 Internal Templates 只需要簡單添加幾行code就可以開通了</p>
 
-<h1 id="regexp宣告">RegExp宣告</h1>
+<p>那麼第一步當然就是先去 Google Analytics 註冊開通，完成後應該會拿到一組 ##追蹤 ID##</p>
 
-<hr />
+<p>大概是長這樣</p>
 
-<p>以下用js示範
-直接例項化:</p>
-
-<pre><code>var reg = new RegExp(pattern [, flags])
+<pre><code>UA-123xxxxxx-0
 </code></pre>
 
-<p>隱式建立:</p>
+<p>取得之後 就可以去 hugo 的 config.toml 裡 加入一行</p>
 
-<pre><code>var reg = /pattern/flags
+<pre><code>googleAnalytics = &quot;UA-123xxxxxx-0&quot; 
 </code></pre>
 
-<p>pattern 是一個字串，填入正規表示式
-flags 是一個可選的字串，包含屬性 &lsquo;g&rsquo;（global ）、&rsquo;i&rsquo; （ignoreCase）和 &rsquo;m&rsquo;（multiline）</p>
+<p>之後去你的 index 模板 加入</p>
 
-<h1 id="regexp-物件方法">RegExp 物件方法</h1>
-
-<hr />
-
-<p>test:
-  檢索字串中是否存在指定的值。返回值是 true 或 false</p>
-
-<pre><code>var reg = new RegExp('a')
-console.log(reg.test('abc'))
-
-OUTPUT: true
+<pre><code>{{ template &quot;_internal/google_analytics.html&quot; . }}
 </code></pre>
 
-<p>exec:
-  檢索字串中的指定值。返回值是被找到的值。如果沒有發現匹配，則返回 null</p>
+<p>run hugo server</p>
 
-<pre><code>var reg = new RegExp('a')
-console.log(reg.exec('abc'))
+<p>接著去 Google Analytics 後台 看 即時流量 應該會有 &ldquo;1&rdquo; 就表示成功了，可以追蹤到你的網頁了</p>
 
-OUTPUT: a
+<p>那麼補充一下可以在你的網址中加入 UTM 更能清楚知道來自哪邊</p>
+
+<pre><code>utm_source=FB // 活動來源
+utm_medium=social // 活動媒介
+utm_campaign=ZZZ // 活動名稱
 </code></pre>
-
-<p>replace:
-  替換與正規表示式匹配的子串</p>
-
-<pre><code>var str = 'hi'
-console.log(str.replace(/hi/, 'yo'));
-
-OUTPUT: yo
-</code></pre>
-
-<h1 id="範例">範例</h1>
-
-<hr />
-
-<table>
-<thead>
-<tr>
-<th align="center">RegExp</th>
-<th align="center">說明</th>
-<th align="center">範例</th>
-</tr>
-</thead>
-
-<tbody>
-<tr>
-<td align="center"><code>/^09\d{8}$/</code></td>
-<td align="center">手機號碼</td>
-<td align="center">&ldquo;0912345678&rdquo;</td>
-</tr>
-
-<tr>
-<td align="center"><code>/^.*@gmail\.com$/</code></td>
-<td align="center">gmail</td>
-<td align="center">&ldquo;123@gmail.com&rdquo;</td>
-</tr>
-
-<tr>
-<td align="center"><code>/^[A-Z]\d{9}$/</code></td>
-<td align="center">身分證字號</td>
-<td align="center">&ldquo;A123456789&rdquo;</td>
-</tr>
-
-<tr>
-<td align="center"><code>/^\d{4}-\d{2}-\d{2}$/</code></td>
-<td align="center">西元生日格式</td>
-<td align="center">&ldquo;1993-08-07&rdquo;</td>
-</tr>
-
-<tr>
-<td align="center"><code>/^U[0-9a-f]{32}$/</code></td>
-<td align="center">LineID</td>
-<td align="center"></td>
-</tr>
-
-<tr>
-<td align="center"><code>/^[1-9][0-9]{4,9}$/</code></td>
-<td align="center">QQ號</td>
-<td align="center">&ldquo;10583600&rdquo;</td>
-</tr>
-
-<tr>
-<td align="center"><code>/^\d $/</code></td>
-<td align="center">是否是數字</td>
-<td align="center"></td>
-</tr>
-
-<tr>
-<td align="center"><code>/[\u4e00-\u9fa5]/</code></td>
-<td align="center">是否存在中文</td>
-<td align="center"></td>
-</tr>
-</tbody>
-</table>
-
-<h1 id="參考來源">參考來源</h1>
-
-<hr />
-
-<p><a href="https://codertw.com/前端開發/231904/">https://codertw.com/前端開發/231904/</a></p>
 
 
     
       <code class="text-bold">Tags</code> 
       
-        <a class="chip text-accent" href="https://Nigel-wei-zhe.github.io/tags/javascript">javascript</a>
+        <a class="chip text-accent" href="https://Nigel-wei-zhe.github.io/tags/google">google</a>
       
     
   </section>
