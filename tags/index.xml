@@ -6,10 +6,19 @@
     <description>Recent content in Tags on Nigel Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-tw</language>
-    <lastBuildDate>Mon, 30 Dec 2019 21:41:49 +0800</lastBuildDate>
+    <lastBuildDate>Wed, 15 Jan 2020 11:11:40 +0800</lastBuildDate>
     
 	<atom:link href="https://Nigel-wei-zhe.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>html5</title>
+      <link>https://Nigel-wei-zhe.github.io/tags/html5/</link>
+      <pubDate>Wed, 15 Jan 2020 11:11:40 +0800</pubDate>
+      
+      <guid>https://Nigel-wei-zhe.github.io/tags/html5/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>google</title>
@@ -62,15 +71,6 @@
       <pubDate>Sun, 24 Nov 2019 16:08:57 +0800</pubDate>
       
       <guid>https://Nigel-wei-zhe.github.io/tags/vuejs/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>html5</title>
-      <link>https://Nigel-wei-zhe.github.io/tags/html5/</link>
-      <pubDate>Thu, 24 Oct 2019 16:08:57 +0800</pubDate>
-      
-      <guid>https://Nigel-wei-zhe.github.io/tags/html5/</guid>
       <description></description>
     </item>
     
