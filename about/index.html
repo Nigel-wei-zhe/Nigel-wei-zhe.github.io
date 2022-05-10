@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    
+    <link
+      href="/about/index.xml"
+      rel="alternate"
+      type="application/rss+xml"
+      title="Nigel 隨便寫"
+    />
+    <link
+      href="/about/index.xml"
+      rel="feed"
+      type="application/rss+xml"
+      title="Nigel 隨便寫"
+    />
+    
+
+    <title>me</title>
+
+     
+    <link rel="stylesheet" href="https://nigel-wei-zhe.github.io/css/colors-dark.min.497d0fcb5815df856137551a435eca0244f27c448c2c8de8342c56ebf8b859b2.css" />
+    <link rel="stylesheet" href="https://nigel-wei-zhe.github.io/css/mystyle.min.caf5de3687fa2719cda74286205ebc68d0faaaa8b750673132c653d0fc958d5d.css" />
+
+    
+  </head>
+  <body>
+    <header id="header">
+      <h1><a href="https://nigel-wei-zhe.github.io/">Nigel 隨便寫</a></h1>
+      <p>唯一應該超越的人，是昨天的自己</p>
+      <p>The only person you should try to be better than, is who you were yesterday.</p>
+    </header>
+
+    <div id="page">
+      <div id="sidebar"><nav>
+	
+		<ul class="nav">
+			
+				<li>
+					<a href="/about">
+						<div class="nav-item">
+							<span>About Me</span>
+							<span class="identifier">關於我</span>
+						</div>
+					</a>
+				</li>
+			
+				<li>
+					<a href="/posts">
+						<div class="nav-item">
+							<span>Blog</span>
+							<span class="identifier">網誌</span>
+						</div>
+					</a>
+				</li>
+			
+		</ul>
+	
+</nav>
+</div>
+
+      <div id="content">
+<h2 id="about-me">
+  <span>About Me</span>
+</h2>
+<p>
+  <span
+    >Hi. I&#39;m Nigel. I am keen to learn new things, keep an open mind in
+    different fields, and know how to reflect on the past, Good at communicating
+    and cooperating with people, taking responsibility for each task and doing
+    the best.
+  </span>
+</p>
+<ul>
+  <li>
+    <span>Web front-end development experience with 3+ years</span>
+  </li>
+  <li>
+    <span
+      >Independent project experience, Build tool &gt; Development &gt;
+      CI/CD</span
+    >
+  </li>
+  <li><span>Multi-person cooperative development experience</span></li>
+  <li><span>Suggest solutions to project problems</span></li>
+</ul>
+<h2 id="skills"><span>Skills</span></h2>
+<ul>
+  <li><span>JavaScript Frameworks</span><span>： Vue, NuxtJs</span></li>
+  <li><span>Wed Server</span><span>: ExpressJs, Nginx</span></li>
+  <li>
+    <span>CI/CD</span
+    ><span>: GitLab CI / Docker / Jenkins / Rancher / Travis CI</span>
+  </li>
+  <li><span>Cowork</span><span> : Git／Slack／Jira／Zeplin</span></li>
+  <li>
+    <span>UI-Framework</span><span> : Bootstrap／AntD／Element-UI／Vant</span>
+  </li>
+</ul>
+<h2 id="work-experience"><span>Work Experience</span></h2>
+<p>
+  <span>Paradise-Soft Company (March 2020 ~ present）</span>
+</p>
+<p>
+  <span>- Web Frontend Developer</span>
+</p>
+<ul>
+  <li><span>Project MVC reconstruction MVVM</span></li>
+  <li>
+    <span
+      >Develop common components, optimize project, modularity, maintainability,
+      reusability and readability</span
+    >
+  </li>
+  <li>
+    <span>Optimize CICD , reduce the docker image size by more than 50%</span>
+  </li>
+  <li><span>Localization implement</span></li>
+</ul>
+<p>
+  <span>Debola Company (October 2016 ~ February 2020）</span>
+</p>
+<p>
+  <span>- MIS</span>
+</p>
+<ul>
+  <li><span>Build Line@( Line Bot, LIFF ) web service</span></li>
+  <li><span>jQuery reconstruction JavaScript Frameworks(Vue)</span></li>
+  <li><span>ERP system maintain</span></li>
+  <li>
+    <span>Intranet Security - Firewall Setup and Backup Plan</span>
+  </li>
+</ul>
+<h2 id="education"><span>Education</span></h2>
+<ul>
+  <li>
+    <span>Ming Chuan University | Taiwan 2011 - 2015</span><br />
+    <span>Bachelor of Information and Telecommunications Engineering</span>
+  </li>
+</ul>
+
+<script>
+  (function () {
+    "use strict";
+
+    
+    var items = document.querySelectorAll(".timeline li");
+
+    function isElementInViewport(el) {
+      var rect = el.getBoundingClientRect();
+      return (
+        rect.top >= 0 &&
+        rect.left >= 0 &&
+        rect.bottom <=
+          (window.innerHeight || document.documentElement.clientHeight) &&
+        rect.right <=
+          (window.innerWidth || document.documentElement.clientWidth)
+      );
+    }
+
+    function callbackFunc() {
+      for (var i = 0; i < items.length; i++) {
+        if (isElementInViewport(items[i])) {
+          items[i].classList.add("in-view");
+        }
+      }
+    }
+
+    
+    window.addEventListener("load", callbackFunc);
+    window.addEventListener("resize", callbackFunc);
+    window.addEventListener("scroll", callbackFunc);
+  })();
+</script>
+<style>
+  .timeline ul {
+    padding: 0px 0;
+    color: #839496;
+  }
+
+  .timeline ul li {
+    list-style-type: none;
+    position: relative;
+    width: 6px;
+    margin: 0;
+    padding-top: 15px;
+    background: #839496;
+  }
+   
+  .timeline ul li::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    transform: translateX(-50%);
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: inherit;
+    z-index: 1;
+  }
+   
+  .timeline ul li div {
+    position: relative;
+    bottom: 0;
+    width: 350px;
+    padding: 15px;
+    background: #002a35;
+    border-color: #839496;
+    border: 1px solid;
+  }
+   
+  .timeline ul li div::before {
+    content: "";
+    position: absolute;
+    bottom: 7px;
+    width: 0;
+    height: 0;
+    border-style: solid;
+  }
+
+  .timeline ul li div {
+    left: 45px;
+  }
+
+  .timeline ul li div::before {
+    left: -15px;
+    border-width: 8px 16px 8px 0;
+    border-color: transparent #839496 transparent transparent;
+  }
+
+  title {
+    display: block;
+    font-size: 1.2rem;
+    font-weight: bold;
+  }
+  time {
+    display: block;
+    font-size: 0.8rem;
+    font-weight: bold;
+    margin-bottom: 8px;
+  }
+  .in-view > div > p {
+    margin: 0;
+  }
+
+   
+
+  .timeline ul li::after {
+    transition: background 0.5s ease-in-out;
+  }
+
+  .timeline ul li.in-view::after {
+    background: #839496;
+  }
+
+  .timeline ul li div {
+    visibility: hidden;
+    opacity: 0;
+    transition: all 0.5s ease-in-out;
+  }
+
+  .timeline ul li:nth-child(odd) div {
+    transform: translate3d(200px, 0, 0);
+  }
+
+  .timeline ul li:nth-child(even) div {
+    transform: translate3d(-200px, 0, 0);
+  }
+
+  .timeline ul li.in-view div {
+    transform: none;
+    visibility: visible;
+    opacity: 1;
+  }
+
+   
+
+  @media screen and (max-width: 900px) {
+    .timeline ul li div {
+      width: 250px;
+    }
+  }
+
+  @media screen and (max-width: 600px) {
+    .timeline ul li {
+      margin-left: 20px;
+    }
+    .timeline ul li div {
+      width: calc(100vw - 150px);
+    }
+    title {
+      display: block;
+      font-size: 0.8rem;
+      font-weight: bold;
+    }
+  }
+
+   
+  .timeline-clippy ul li::after {
+    width: 40px;
+    height: 40px;
+    border-radius: 0;
+  }
+
+  .timeline-rhombus ul li::after {
+    clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+  }
+
+  .timeline-rhombus ul li div::before {
+    bottom: 12px;
+  }
+
+  .timeline-star ul li::after {
+    clip-path: polygon(
+      50% 0%,
+      61% 35%,
+      98% 35%,
+      68% 57%,
+      79% 91%,
+      50% 70%,
+      21% 91%,
+      32% 57%,
+      2% 35%,
+      39% 35%
+    );
+  }
+
+  .timeline-heptagon ul li::after {
+    clip-path: polygon(
+      50% 0%,
+      90% 20%,
+      100% 60%,
+      75% 100%,
+      25% 100%,
+      0% 60%,
+      10% 20%
+    );
+  }
+
+  .timeline-infinite ul li::after {
+    animation: scaleAnimation 2s infinite;
+  }
+
+  @keyframes scaleAnimation {
+    0% {
+      transform: translateX(-50%) scale(1);
+    }
+    50% {
+      transform: translateX(-50%) scale(1.25);
+    }
+    100% {
+      transform: translateX(-50%) scale(1);
+    }
+  }
+</style>
+</div>
+
+      <footer id="footer">
+        <p class="copyright">
+           Copyright © 2022 nigel-lee. All rights reserved. 
+        </p>
+      </footer>
+    </div>
+
+    
+  </body>
+</html>
