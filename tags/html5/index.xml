@@ -2,18 +2,18 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>html5 on Nigel 隨便寫</title>
-    <link>https://nigel-wei-zhe.github.io/tags/html5/</link>
+    <link>http://nigel-wei-zhe.github.io/tags/html5/</link>
     <description>Recent content in html5 on Nigel 隨便寫</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>Copyright © 2022 nigel-lee. All rights reserved.</copyright>
-    <lastBuildDate>Wed, 15 Jan 2020 11:11:40 +0800</lastBuildDate><atom:link href="https://nigel-wei-zhe.github.io/tags/html5/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 15 Jan 2020 11:11:40 +0800</lastBuildDate><atom:link href="http://nigel-wei-zhe.github.io/tags/html5/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>HTTP - cache</title>
-      <link>https://nigel-wei-zhe.github.io/posts/http-cache/</link>
+      <link>http://nigel-wei-zhe.github.io/posts/http-cache/</link>
       <pubDate>Wed, 15 Jan 2020 11:11:40 +0800</pubDate>
       
-      <guid>https://nigel-wei-zhe.github.io/posts/http-cache/</guid>
+      <guid>http://nigel-wei-zhe.github.io/posts/http-cache/</guid>
       <description>序  快取(cache)，聽過也大概知道有甚麼作用，但其中的原理還有 Header 中的一些相關配置就不是這麼的了解 所以整理了一下資料讓自己更清楚。
 快取(Cache) 是甚麼  今天要瀏覽一個網頁，流程會是這樣
  瀏覽器 &amp;ndash; 請求 &amp;ndash;&amp;gt; 伺服器 &amp;ndash; 提供HTML、images&amp;hellip;等相關資源 &amp;ndash;&amp;gt; 瀏覽器
@@ -28,10 +28,10 @@ Cache-Control: max-age=10 意思是這個請求的到期時間是10秒，在10�
     
     <item>
       <title>LocalStorage</title>
-      <link>https://nigel-wei-zhe.github.io/posts/localstorage/</link>
+      <link>http://nigel-wei-zhe.github.io/posts/localstorage/</link>
       <pubDate>Thu, 24 Oct 2019 16:08:57 +0800</pubDate>
       
-      <guid>https://nigel-wei-zhe.github.io/posts/localstorage/</guid>
+      <guid>http://nigel-wei-zhe.github.io/posts/localstorage/</guid>
       <description>介紹  Web Storage 為 HTML5 標準中新加入的技術 主要分兩種一個是
 sessionStorage
  放在sessionStorage的資料會在頁面(頁籤)關閉時清空，只要該頁面頁面(頁籤)沒被關閉或者有還原(restore)該頁面，資料就會保存。
@@ -51,10 +51,10 @@ Storage.clear()  把storage 中的所有屬性移除</description>
     
     <item>
       <title>使用Hugo</title>
-      <link>https://nigel-wei-zhe.github.io/posts/%E4%BD%BF%E7%94%A8hugo/</link>
+      <link>http://nigel-wei-zhe.github.io/posts/%E4%BD%BF%E7%94%A8hugo/</link>
       <pubDate>Thu, 03 Oct 2019 20:09:38 +0800</pubDate>
       
-      <guid>https://nigel-wei-zhe.github.io/posts/%E4%BD%BF%E7%94%A8hugo/</guid>
+      <guid>http://nigel-wei-zhe.github.io/posts/%E4%BD%BF%E7%94%A8hugo/</guid>
       <description>建置環境:Windows-64bit
  安裝Hugo 前往: https://github.com/gohugoio/hugo/releases
 下載對應的版本
