@@ -2,18 +2,18 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>javascript on Nigel 隨便寫</title>
-    <link>http://nigel-wei-zhe.github.io/tags/javascript/</link>
+    <link>https://nigel-wei-zhe.github.io/tags/javascript/</link>
     <description>Recent content in javascript on Nigel 隨便寫</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>Copyright © 2022 nigel-lee. All rights reserved.</copyright>
-    <lastBuildDate>Wed, 18 Dec 2019 09:44:32 +0800</lastBuildDate><atom:link href="http://nigel-wei-zhe.github.io/tags/javascript/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 18 Dec 2019 09:44:32 +0800</lastBuildDate><atom:link href="https://nigel-wei-zhe.github.io/tags/javascript/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Shallow Copy &amp; Deep Copy</title>
-      <link>http://nigel-wei-zhe.github.io/posts/shallow-copy-_-deep-copy/</link>
+      <link>https://nigel-wei-zhe.github.io/posts/shallow-copy-_-deep-copy/</link>
       <pubDate>Wed, 18 Dec 2019 09:44:32 +0800</pubDate>
       
-      <guid>http://nigel-wei-zhe.github.io/posts/shallow-copy-_-deep-copy/</guid>
+      <guid>https://nigel-wei-zhe.github.io/posts/shallow-copy-_-deep-copy/</guid>
       <description>Data Type (型別)  首先在JS中,可分為 Primitive Type (基本型別) 跟 Non-Primitive Type (非基本型別)
  Primitive: Number、 String、 Boolean、 Null、 Undefined Non-Primitive: Object、 Array、 Function、 Date、 Regx  兩者差異在於，給值方式的不同
 那麼可以分為 By value (值) 跟 By reference (參考位置)
@@ -24,10 +24,10 @@
     
     <item>
       <title>multer</title>
-      <link>http://nigel-wei-zhe.github.io/posts/multer/</link>
+      <link>https://nigel-wei-zhe.github.io/posts/multer/</link>
       <pubDate>Sun, 24 Nov 2019 16:08:57 +0800</pubDate>
       
-      <guid>http://nigel-wei-zhe.github.io/posts/multer/</guid>
+      <guid>https://nigel-wei-zhe.github.io/posts/multer/</guid>
       <description>介紹   Multer 是一個 node.js 的中間件，&amp;ldquo;只&amp;quot;用於處理 multipart/form-data 類型的數據，主要用於上傳
  安裝:
 npm install --save multer 參數  req.file 的屬性    Key Description Note     fieldname 表單上面的名稱    originalname 電腦上顯示的檔案名稱    encoding 編碼    mimetype 文件的mime 類型    size 文件大小 (位元組)    destination 路徑 DiskStorage   filename 保存在 destination 的名稱 DiskStorage   path 完整路徑 DiskStorage   buffer 存放檔案的內存 MemoryStorage    multer(opts) 的 opts    Key Description     dest or storage 存放位置   fileFilter 過濾 (函式)   limits 限制數據   preservePath 保存完整文件路徑     storage</description>
@@ -35,10 +35,10 @@ npm install --save multer 參數  req.file 的屬性    Key Description Note   
     
     <item>
       <title>LocalStorage</title>
-      <link>http://nigel-wei-zhe.github.io/posts/localstorage/</link>
+      <link>https://nigel-wei-zhe.github.io/posts/localstorage/</link>
       <pubDate>Thu, 24 Oct 2019 16:08:57 +0800</pubDate>
       
-      <guid>http://nigel-wei-zhe.github.io/posts/localstorage/</guid>
+      <guid>https://nigel-wei-zhe.github.io/posts/localstorage/</guid>
       <description>介紹  Web Storage 為 HTML5 標準中新加入的技術 主要分兩種一個是
 sessionStorage
  放在sessionStorage的資料會在頁面(頁籤)關閉時清空，只要該頁面頁面(頁籤)沒被關閉或者有還原(restore)該頁面，資料就會保存。
@@ -58,10 +58,10 @@ Storage.clear()  把storage 中的所有屬性移除</description>
     
     <item>
       <title>Unix timestamp</title>
-      <link>http://nigel-wei-zhe.github.io/posts/unix-timestamp/</link>
+      <link>https://nigel-wei-zhe.github.io/posts/unix-timestamp/</link>
       <pubDate>Wed, 23 Oct 2019 15:16:39 +0800</pubDate>
       
-      <guid>http://nigel-wei-zhe.github.io/posts/unix-timestamp/</guid>
+      <guid>https://nigel-wei-zhe.github.io/posts/unix-timestamp/</guid>
       <description>簡介  Unix timestamp (時間戳) 是指至格林威治時間 1970年01月01日00时00分00秒起 到現在的&amp;quot;總秒數&amp;quot;
 javascript 轉換   1572480000 &amp;ndash;&amp;gt; 2019-10-31 08:00:00 +0800  YYYY-MM-DD格式，使用主機時間
 function (timestamp = 1572480000) { const month = new Date(timestamp * 1000).getMonth() &amp;lt; 10 ? 0 + (new Date(timestamp * 1000).getMonth() + 1) : new Date(timestamp * 1000).getMonth() + 1 const date = new Date(timestamp * 1000).getDate() &amp;lt; 10 ? 0 + (new Date(timestamp * 1000).getDate()) : new Date(timestamp * 1000).getDate() const formatTime = `${new Date(timestamp * 1000).</description>
@@ -69,10 +69,10 @@ function (timestamp = 1572480000) { const month = new Date(timestamp * 1000).get
     
     <item>
       <title>JavaScript Abbreviation</title>
-      <link>http://nigel-wei-zhe.github.io/posts/javascript-abbreviation/</link>
+      <link>https://nigel-wei-zhe.github.io/posts/javascript-abbreviation/</link>
       <pubDate>Sun, 20 Oct 2019 17:02:14 +0800</pubDate>
       
-      <guid>http://nigel-wei-zhe.github.io/posts/javascript-abbreviation/</guid>
+      <guid>https://nigel-wei-zhe.github.io/posts/javascript-abbreviation/</guid>
       <description>三元運算子  當要寫 if else 判斷式時 一般會寫成
 const a = 7 let result if (a &amp;gt; 0) { result = `a大於0` } else { result = `a小於0` }  簡寫
 let result = a &amp;gt; 0 ? `a大於0` : `a小於0`   短路求值  當宣告一個變數給值時，想確認不是 null, undefined, 空值時 可能會這樣寫
@@ -81,10 +81,10 @@ if (a !== null || a !== undefined || a !== &#39;&#39;) { let b = a }  簡寫</de
     
     <item>
       <title>Regular Expression</title>
-      <link>http://nigel-wei-zhe.github.io/posts/regular-expression/</link>
+      <link>https://nigel-wei-zhe.github.io/posts/regular-expression/</link>
       <pubDate>Tue, 08 Oct 2019 15:22:42 +0800</pubDate>
       
-      <guid>http://nigel-wei-zhe.github.io/posts/regular-expression/</guid>
+      <guid>https://nigel-wei-zhe.github.io/posts/regular-expression/</guid>
       <description>介紹  Regular Expression (RegExp) 正規表達式 用來判斷字串是否有符合格式 線上測試Reg格式的網址:https://regexr.com/
 RegExp宣告  以下用js示範 直接例項化:
 var reg = new RegExp(pattern [, flags])  隱式建立:
